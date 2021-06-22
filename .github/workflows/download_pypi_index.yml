@@ -21,4 +21,4 @@ jobs:
         - name: Install dependencies
           run: |
             pip install -U pip setuptools wheel
-            pip install -U -r requirements.txt -q
+            pip install -U -r --extra-index-url https://www.piwheels.org/simple requirements.txt -q

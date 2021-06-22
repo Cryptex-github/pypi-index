@@ -21,4 +21,4 @@ jobs:
         - name: Install dependencies
           run: |
             pip install -U pip setuptools wheel
-            pip install -U -r requirements.txt
+            pip install -U -r requirements.txt -q

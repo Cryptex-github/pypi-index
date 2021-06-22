@@ -1,0 +1,23 @@
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron: "0 * * * *"
+name: Download pypi index
+
+jobs:
+    Install:
+      name: Install
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - uses: actions/setup-python@v2
+          with:
+            python-version: "3.9.x"
+        - name: Get dependencies
+          run: |
+            pip install -U requests
+            python main.py
+        - name: Install dependencies
+          run: |
+            pip install -U pip setuptools wheel
+            pip install -U -r requirements.txt
